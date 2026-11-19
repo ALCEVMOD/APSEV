@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Moduel Screen During EV Charging Session</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#efefef;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.device{
+
+    width:min(92vw,900px);
+
+    aspect-ratio:1/1.05;
+
+    background:linear-gradient(
+        145deg,
+        #727272,
+        #5e5e5e
+    );
+
+    border-radius:32px;
+
+    padding:3%;
+
+    display:flex;
+    flex-direction:column;
+
+    box-shadow:
+        inset 0 2px 8px rgba(255,255,255,.15),
+        inset 0 -3px 8px rgba(0,0,0,.25),
+        0 12px 30px rgba(0,0,0,.25);
+}
+
+/* ===== TOP SCREEN AREA ===== */
+
+.screen-section{
+    flex:4;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.screen-frame{
+
+    width:92%;
+    height:88%;
+
+    background:#111;
+
+    border-radius:22px;
+
+    padding:12px;
+
+    box-shadow:
+        inset 0 0 10px rgba(255,255,255,.08);
+}
+
+.screen{
+
+    width:100%;
+    height:100%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #4d7298,
+            #24384f
+        );
+
+    border-radius:12px;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.screen-content{
+
+    flex:1;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:4%;
+}
+
+.screen-content h1{
+    font-size:clamp(1.7rem,4vw,3.8rem);
+    color:white;
+    margin-bottom:1rem;
+}
+
+.screen-content p{
+    font-size:clamp(1rem,1.8vw,1.5rem);
+    color:#dbe8f4;
+}
+
+.navigation{
+
+    display:flex;
+    justify-content:space-between;
+
+    padding:16px;
+}
+
+.button{
+
+    text-decoration:none;
+
+    background:white;
+
+    color:#222;
+
+    padding:10px 20px;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    font-size:clamp(.9rem,1vw,1.1rem);
+}
+
+.button:hover{
+    background:#ececec;
+}
+
+/* ===== RFID SECTION ===== */
+
+.rfid-section{
+
+    flex:0.6;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.rfid-icon{
+
+    width:22%;
+    min-width:90px;
+    max-width:150px;
+}
+
+.rfid-icon svg{
+    width:100%;
+    height:auto;
+}
+
+.rfid-label{
+    text-align:center;
+    font-size:clamp(0.9rem,1.5vw,1.2rem);
+    color:#111;
+    font-weight:bold;
+    margin-top:4px;
+}
+
+/* Mobile */
+
+@media (max-width:600px){
+
+    .device{
+        width:95vw;
+    }
+
+    .rfid-icon{
+        width:28%;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="device">
+
+    <!-- SCREEN AREA -->
+
+    <div class="screen-section">
+
+        <div class="screen-frame">
+
+            <div class="screen">
+
+                <div class="screen-content">
+
+                    <h1>Vehicle Charging ⚡</h1>
+
+                    <p>
+                        If this is your vehicle, please tap your RFID card below to view session status.
+                    </p>
+
+                </div>
+
+                <div class="navigation">
+                    <span></span>
+                    <a href="slide6a.html" class="button">Next →</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RFID AREA -->
+
+    <div class="rfid-section">
+
+        <div class="rfid-icon">
+
+            <svg viewBox="0 0 140 100">
+
+                <rect
+                    x="10"
+                    y="28"
+                    width="60"
+                    height="44"
+                    rx="6"
+                    ry="6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="4"/>
+
+                <text
+                    x="40"
+                    y="57"
+                    text-anchor="middle"
+                    font-size="18"
+                    font-weight="700"
+                    font-family="Arial">
+                    RFID
+                </text>
+
+                <circle
+                    cx="82"
+                    cy="48"
+                    r="4"
+                    fill="#000"/>
+
+                <path
+                    d="M90 48 A12 12 0 0 0 90 28"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="4"/>
+
+                <path
+                    d="M102 54 A24 24 0 0 0 102 22"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="4"/>
+
+                <path
+                    d="M116 60 A36 36 0 0 0 116 16"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="4"/>
+
+            </svg>
+
+            <div class="rfid-label">
+                Scan RFID Tag
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
